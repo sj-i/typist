@@ -26,24 +26,6 @@ final class Typist
     }
 
     /**
-     * @param-out int $value_holder
-     */
-    public static function int(?int &$value_holder, int $value): IntEnforcer
-    {
-        $value_holder = $value;
-        return new IntEnforcer($value_holder);
-    }
-
-    /**
-     * @param-out string $value_holder
-     */
-    public static function string(?string &$value_holder, string $value): StringEnforcer
-    {
-        $value_holder = $value;
-        return new StringEnforcer($value_holder);
-    }
-
-    /**
      * @param-out bool $value_holder
      */
     public static function bool(?bool &$value_holder, bool $value): BoolEnforcer
@@ -53,12 +35,30 @@ final class Typist
     }
 
     /**
+     * @param-out int $value_holder
+     */
+    public static function int(?int &$value_holder, int $value): IntEnforcer
+    {
+        $value_holder = $value;
+        return new IntEnforcer($value_holder);
+    }
+
+    /**
      * @param-out float $value_holder
      */
     public static function float(?float &$value_holder, float $value): FloatEnforcer
     {
         $value_holder = $value;
         return new FloatEnforcer($value_holder);
+    }
+
+    /**
+     * @param-out string $value_holder
+     */
+    public static function string(?string &$value_holder, string $value): StringEnforcer
+    {
+        $value_holder = $value;
+        return new StringEnforcer($value_holder);
     }
 
     /**

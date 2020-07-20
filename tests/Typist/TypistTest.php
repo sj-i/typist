@@ -19,36 +19,6 @@ use TypeError;
 
 class TypistTest extends TestCase
 {
-    public function testInt(): void
-    {
-        $_ = [
-            Typist::int($typed_value, 1),
-        ];
-        $this->assertSame(1, $typed_value);
-        $typed_value = 2;
-        $this->assertTypeError(function () use (&$typed_value) {
-            $typed_value = 'aaa';
-        });
-        $this->assertTypeError(function () use (&$typed_value) {
-            $typed_value = null;
-        });
-    }
-
-    public function testString(): void
-    {
-        $_ = [
-            Typist::string($typed_value, 'a'),
-        ];
-        $this->assertSame('a', $typed_value);
-        $typed_value = 'b';
-        $this->assertTypeError(function () use (&$typed_value) {
-            $typed_value = 1;
-        });
-        $this->assertTypeError(function () use (&$typed_value) {
-            $typed_value = null;
-        });
-    }
-
     public function testBool(): void
     {
         $_ = [
@@ -58,6 +28,21 @@ class TypistTest extends TestCase
         $typed_value = true;
         $this->assertTypeError(function () use (&$typed_value) {
             $typed_value = 1;
+        });
+        $this->assertTypeError(function () use (&$typed_value) {
+            $typed_value = null;
+        });
+    }
+
+    public function testInt(): void
+    {
+        $_ = [
+            Typist::int($typed_value, 1),
+        ];
+        $this->assertSame(1, $typed_value);
+        $typed_value = 2;
+        $this->assertTypeError(function () use (&$typed_value) {
+            $typed_value = 'aaa';
         });
         $this->assertTypeError(function () use (&$typed_value) {
             $typed_value = null;
@@ -80,6 +65,21 @@ class TypistTest extends TestCase
         });
     }
 
+    public function testString(): void
+    {
+        $_ = [
+            Typist::string($typed_value, 'a'),
+        ];
+        $this->assertSame('a', $typed_value);
+        $typed_value = 'b';
+        $this->assertTypeError(function () use (&$typed_value) {
+            $typed_value = 1;
+        });
+        $this->assertTypeError(function () use (&$typed_value) {
+            $typed_value = null;
+        });
+    }
+
     public function testClass(): void
     {
         $_ = [
@@ -95,30 +95,6 @@ class TypistTest extends TestCase
         });
     }
 
-    public function testNullableInt(): void
-    {
-        $_ = [
-            Typist::nullable()::int($typed_value, 1),
-        ];
-        $this->assertSame(1, $typed_value);
-        $typed_value = 2;
-        $typed_value = null;
-        $this->expectException(TypeError::class);
-        $typed_value = 'aaa';
-    }
-
-    public function testNullableString(): void
-    {
-        $_ = [
-            Typist::nullable()::string($typed_value, 'a'),
-        ];
-        $this->assertSame('a', $typed_value);
-        $typed_value = 'b';
-        $typed_value = null;
-        $this->expectException(TypeError::class);
-        $typed_value = 1;
-    }
-
     public function testNullableBool(): void
     {
         $_ = [
@@ -129,6 +105,18 @@ class TypistTest extends TestCase
         $typed_value = null;
         $this->expectException(TypeError::class);
         $typed_value = 1;
+    }
+
+    public function testNullableInt(): void
+    {
+        $_ = [
+            Typist::nullable()::int($typed_value, 1),
+        ];
+        $this->assertSame(1, $typed_value);
+        $typed_value = 2;
+        $typed_value = null;
+        $this->expectException(TypeError::class);
+        $typed_value = 'aaa';
     }
 
     public function testNullableFloat(): void
@@ -142,6 +130,18 @@ class TypistTest extends TestCase
         $typed_value = null;
         $this->expectException(TypeError::class);
         $typed_value = '';
+    }
+
+    public function testNullableString(): void
+    {
+        $_ = [
+            Typist::nullable()::string($typed_value, 'a'),
+        ];
+        $this->assertSame('a', $typed_value);
+        $typed_value = 'b';
+        $typed_value = null;
+        $this->expectException(TypeError::class);
+        $typed_value = 1;
     }
 
     public function testNullableClass(): void

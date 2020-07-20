@@ -14,19 +14,19 @@ declare(strict_types=1);
 namespace Typist;
 
 /**
+ * @param-out bool $value_holder
+ */
+function bool(?bool &$value_holder, bool $value): BoolEnforcer
+{
+    return Typist::bool($value_holder, $value);
+}
+
+/**
  * @param-out int $value_holder
  */
 function int(?int &$value_holder, int $value): IntEnforcer
 {
     return Typist::int($value_holder, $value);
-}
-
-/**
- * @param-out string $value_holder
- */
-function string(?string &$value_holder, string $value): StringEnforcer
-{
-    return Typist::string($value_holder, $value);
 }
 
 /**
@@ -38,11 +38,11 @@ function float(?float &$value_holder, float $value): FloatEnforcer
 }
 
 /**
- * @param-out bool $value_holder
+ * @param-out string $value_holder
  */
-function bool(?bool &$value_holder, bool $value): BoolEnforcer
+function string(?string &$value_holder, string $value): StringEnforcer
 {
-    return Typist::bool($value_holder, $value);
+    return Typist::string($value_holder, $value);
 }
 
 /**
@@ -60,19 +60,19 @@ function class_(string $class_name, &$value_holder, $value): ClassEnforcer
 }
 
 /**
+ * @param-out bool|null $value_holder
+ */
+function nullable_bool(?bool &$value_holder, ?bool $value): NullableBoolEnforcer
+{
+    return Typist::nullable()::bool($value_holder, $value);
+}
+
+/**
  * @param-out int|null $value_holder
  */
 function nullable_int(?int &$value_holder, ?int $value): NullableIntEnforcer
 {
     return Typist::nullable()::int($value_holder, $value);
-}
-
-/**
- * @param-out string|null $value_holder
- */
-function nullable_string(?string &$value_holder, ?string $value): NullableStringEnforcer
-{
-    return Typist::nullable()::string($value_holder, $value);
 }
 
 /**
@@ -84,11 +84,11 @@ function nullable_float(?float &$value_holder, ?float $value): NullableFloatEnfo
 }
 
 /**
- * @param-out bool|null $value_holder
+ * @param-out string|null $value_holder
  */
-function nullable_bool(?bool &$value_holder, ?bool $value): NullableBoolEnforcer
+function nullable_string(?string &$value_holder, ?string $value): NullableStringEnforcer
 {
-    return Typist::nullable()::bool($value_holder, $value);
+    return Typist::nullable()::string($value_holder, $value);
 }
 
 /**

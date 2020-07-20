@@ -20,24 +20,6 @@ final class NullableTypeEnforcer
     }
 
     /**
-     * @param-out int|null $value_holder
-     */
-    public static function int(?int &$value_holder, ?int $value): NullableIntEnforcer
-    {
-        $value_holder = $value;
-        return new NullableIntEnforcer($value_holder);
-    }
-
-    /**
-     * @param-out string|null $value_holder
-     */
-    public static function string(?string &$value_holder, ?string $value): NullableStringEnforcer
-    {
-        $value_holder = $value;
-        return new NullableStringEnforcer($value_holder);
-    }
-
-    /**
      * @param-out bool|null $value_holder
      */
     public static function bool(?bool &$value_holder, ?bool $value): NullableBoolEnforcer
@@ -47,12 +29,30 @@ final class NullableTypeEnforcer
     }
 
     /**
+     * @param-out int|null $value_holder
+     */
+    public static function int(?int &$value_holder, ?int $value): NullableIntEnforcer
+    {
+        $value_holder = $value;
+        return new NullableIntEnforcer($value_holder);
+    }
+
+    /**
      * @param-out float|null $value_holder
      */
     public static function float(?float &$value_holder, ?float $value): NullableFloatEnforcer
     {
         $value_holder = $value;
         return new NullableFloatEnforcer($value_holder);
+    }
+
+    /**
+     * @param-out string|null $value_holder
+     */
+    public static function string(?string &$value_holder, ?string $value): NullableStringEnforcer
+    {
+        $value_holder = $value;
+        return new NullableStringEnforcer($value_holder);
     }
 
     /**
