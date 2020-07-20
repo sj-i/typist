@@ -49,6 +49,24 @@ $typed_float = 'a';
 $typed_object = 'a';
 ```
 
+Function interfaces are also available.
+
+```
+use function Typist\int;
+use function Typist\float;
+use function Typist\string;
+use function Typist\bool;
+use function Typist\class_; // trailing underscore is needed
+
+$_ = [
+    int($typed_int, 1),
+    string($typed_string, 'str'),
+    bool($typed_bool, false),
+    float($typed_float, 0.1),
+    class_(\DateTimeInterface::class, $typed_object, new \DateTime()),
+];
+```
+
 ## Nullable Types
 
 ```
@@ -81,3 +99,26 @@ $_ = [
     Typist::nullable::class(\DateTimeInterface::class, $typed_object, null),
 ];
 ```
+
+Function interfaces are available here too.
+
+```
+use function Typist\nullable_int;
+use function Typist\nullable_float;
+use function Typist\nullable_string;
+use function Typist\nullable_bool;
+use function Typist\nullable_class; // trailing underscore is not needed
+
+$_ = [
+    nullable_int($typed_int, null),
+    nullable_string($typed_string, null),
+    nullable_bool($typed_bool, null),
+    nullable_float($typed_float, null),
+    nullable_class(\DateTimeInterface::class, $typed_object, null),
+];
+```
+
+
+## See also
+- https://github.com/azjezz/typed
+    - similar work by @azjezz

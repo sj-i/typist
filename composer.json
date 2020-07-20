@@ -24,7 +24,10 @@
   "autoload": {
     "psr-4": {
       "Typist\\": "src/Typist"
-    }
+    },
+    "files": [
+      "src/Typist/functions.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
