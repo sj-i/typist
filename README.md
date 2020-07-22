@@ -13,7 +13,7 @@ It internally uses references to typed properties introduced in PHP 7.4.
 
 ## Installation
 
-```
+```bash
 composer require sj-i/typist
 ```
 
@@ -24,7 +24,7 @@ composer require sj-i/typist
 # Usage
 ## Basic Usage
 
-```
+```php
 use Typist\Typist;
 
 // type enforcements are valid during the lifetime of this `$_`
@@ -59,7 +59,7 @@ $typed_object = 'a';
 
 Function interfaces are also available.
 
-```
+```php
 use function Typist\int;
 use function Typist\float;
 use function Typist\string;
@@ -77,7 +77,7 @@ $_ = [
 
 ## Nullable Types
 
-```
+```php
 use Typist\Typist;
 
 $_ = [
@@ -96,7 +96,7 @@ $_ = [
 
 or if you use PHP8, `()` can be omitted.
 
-```
+```php
 use Typist\Typist;
 
 $_ = [
@@ -110,7 +110,7 @@ $_ = [
 
 Function interfaces are available here too.
 
-```
+```php
 use function Typist\nullable_int;
 use function Typist\nullable_float;
 use function Typist\nullable_string;
