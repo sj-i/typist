@@ -21,8 +21,8 @@ composer require sj-i/typist
 
 - PHP 7.4 or later
 
-# Usage
-## Basic Usage
+## Usage
+### Basic Usage
 
 ```php
 use Typist\Typist;
@@ -75,7 +75,7 @@ $_ = [
 ];
 ```
 
-## Nullable Types
+### Nullable Types
 
 ```php
 use Typist\Typist;
@@ -125,7 +125,6 @@ $_ = [
     nullable_class(\DateTimeInterface::class, $typed_object, null),
 ];
 ```
-
 
 ## See also
 - https://github.com/azjezz/typed
