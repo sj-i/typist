@@ -60,6 +60,7 @@ final class NullableTypeEnforcer
      * @param class-string<T> $class_name
      * @param T|null $value_holder
      * @param T|null $value
+     * @param-out T|null $value_holder
      * @return NullableClassEnforcer
      */
     public static function class(string $class_name, &$value_holder, $value): NullableClassEnforcer

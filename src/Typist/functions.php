@@ -96,6 +96,7 @@ function nullable_string(?string &$value_holder, ?string $value): NullableString
  * @param class-string<T> $class_name
  * @param T|null $value_holder
  * @param T|null $value
+ * @param-out T|null $value_holder
  * @return NullableClassEnforcer
  */
 function nullable_class(string $class_name, &$value_holder, $value): NullableClassEnforcer
