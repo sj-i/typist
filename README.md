@@ -1,12 +1,12 @@
+# Typist
+
 ![Minimum PHP version: 7.4.0](https://img.shields.io/badge/php-7.4.0%2B-blue.svg)
 [![Packagist](https://img.shields.io/packagist/v/sj-i/typist.svg)](https://packagist.org/packages/sj-i/typist)
-[![Packagist](https://img.shields.io/packagist/dt/sj-i/typist.svg)](https://packagist.org/packages/sj-i/typist)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/sj-i/typist.svg)](https://packagist.org/packages/sj-i/typist/stats)
 [![Github Actions](https://github.com/sj-i/typist/workflows/build/badge.svg)](https://github.com/sj-i/typist/actions)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/sj-i/typist/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/sj-i/typist/?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/sj-i/typist/badge.svg?branch=master)](https://coveralls.io/github/sj-i/typist?branch=master)
-![Psalm coverage](https://shepherd.dev/github/sj-i/typist/coverage.svg?)
-
-# Typist
+[![Psalm coverage](https://shepherd.dev/github/sj-i/typist/coverage.svg?)](https://shepherd.dev/github/sj-i/typist)
 
 Typist is a PHP library enforcing types of local variables.  
 It internally uses references to typed properties introduced in PHP 7.4.
