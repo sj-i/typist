@@ -20,11 +20,11 @@
     "phpunit/phpunit": "^8.0 || ^9.0",
     "vimeo/psalm": "^3.12",
     "squizlabs/php_codesniffer": "^3.5",
-    "php-coveralls/php-coveralls": "^2.2"
+    "twinh/php-coveralls": "^2.3"
   },
   "autoload": {
     "psr-4": {
-      "Typist\\": "src/Typist"
+      "Typist\\": "src/Typist/"
     },
     "files": [
       "src/Typist/functions.php"
@@ -32,7 +32,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Typist\\": "tests/Typist"
+      "Typist\\": "tests/Typist/"
     }
   }
 }
