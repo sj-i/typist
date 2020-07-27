@@ -35,7 +35,7 @@ jobs:
           restore-keys: ${{ runner.os }}-composer-
 
       - name: Validate composer.json and composer.lock
-        run: composer validate
+        run: composer validate --strict
 
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --no-suggest
@@ -51,8 +51,7 @@ jobs:
           mkdir -p build/logs
           ./vendor/bin/phpunit --coverage-clover build/logs/clover.xml
 
-      - name: Send to coveralls
-        run: ./vendor/bin/php-coveralls -v
+      - name: Send to Coveralls
         env:
-          COVERALLS_RUN_LOCALLY: 1
-          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./vendor/bin/php-coveralls -v
