@@ -24,7 +24,7 @@ class TypistTest extends TestCase
         $_ = [
             Typist::bool($typed_value, false),
         ];
-        $this->assertSame(false, $typed_value);
+        $this->assertFalse($typed_value);
         $typed_value = true;
         $this->assertTypeError(function () use (&$typed_value) {
             $typed_value = 1;
@@ -100,7 +100,7 @@ class TypistTest extends TestCase
         $_ = [
             Typist::nullable()::bool($typed_value, false),
         ];
-        $this->assertSame(false, $typed_value);
+        $this->assertFalse($typed_value);
         $typed_value = true;
         $typed_value = null;
         $this->expectException(TypeError::class);
